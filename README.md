@@ -193,6 +193,54 @@ In **hybrid inheritance**, a combination of more than one type of inheritance is
 
 ---
 
+# C++ Inheritance Question
+
+## Question:
+Consider the following C++ code snippet. What is the type of inheritance used, and what will be the output of the `sizeof(B)` statement?
+
+### Code Snippet:
+```cpp
+#include <iostream>  
+#include <string>  
+using namespace std;  
+
+class A {  
+    int a, b;  
+    float d;  
+
+public:  
+    void change(int l) {  
+        a = l;  
+    }  
+
+    void value_of_a() {  
+        cout << a;  
+    }  
+};  
+
+class B : private A {  
+};  
+
+int main(int argc, char const *argv[]) {  
+    B b;  
+    cout << sizeof(B);  
+    return 0;  
+}  
+```
+
+## Discussion Points:
+- **Inheritance Type:**
+  - The inheritance here is `private` inheritance, meaning class `B` inherits all the members of class `A` privately. This makes the inherited members inaccessible from outside class `B`, but they still contribute to the size of class `B`.
+
+- **Size Calculation:**
+  - In C++, private members are inherited but remain hidden in the derived class. Since class `A` contains three data members (two `int`s and one `float`), the size of class `B` will include those members.
+  - Depending on padding and alignment, the exact size of class `B` might vary based on your compiler and system architecture.
+
+## Output Example:
+For many compilers on typical architectures, you might expect the size of `B` to be 12 bytes due to the presence of `int` (4 bytes) and `float` (4 bytes) and potential padding.
+
+---
+
 ## Conclusion
 
 This README used humor and relatable analogies to explain the concept of inheritance in C++. We hope this unconventional approach made learning OOPS more enjoyable!
