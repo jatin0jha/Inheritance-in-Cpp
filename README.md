@@ -188,7 +188,7 @@ In **hybrid inheritance**, a combination of more than one type of inheritance is
 - **Pintu**: The base class, often the "victim" whose properties are inherited.
 - **Chintu**: The "chor" (thief) who inherits from Pintu (and sometimes Sonu).
 - **Sonu**: Another base class.
-- **Shakalan**: The "boss" who inherits from Chintu.
+- **Shakalan**: The "wife" who inherits from Chintu.
 - **Kidmada**: A class involved in a "twisted affair" with Shakalan (multiple inheritance case).
 
 ---
